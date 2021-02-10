@@ -67,25 +67,21 @@ function renderRides(ridesArray) {
   }
 }
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', async function() {
+
+  let response = await fetch(`https://kiei451.com/api/rides.json`)
+
+  let ridesArray = await response.json()
 
   let allRides = document.querySelector('#all-filter')
     allRides.addEventListener('click', async function(event){
 
-    let response = await fetch(`https://kiei451.com/api/rides.json`)
-
-    let json = await response.json()
-
-    renderRides(json)
+    renderRides(ridesArray)
 
   })
 
   let nooberPurpleRides = document.querySelector('#noober-purple-filter')
     nooberPurpleRides.addEventListener('click', async function(event){
-
-    let response = await fetch(`https://kiei451.com/api/rides.json`)
-
-    let ridesArray = await response.json()
 
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
@@ -107,10 +103,6 @@ window.addEventListener('DOMContentLoaded', function() {
   let nooberPoolRides = document.querySelector('#noober-pool-filter')
     nooberPoolRides.addEventListener('click', async function(event){
 
-    let response = await fetch(`https://kiei451.com/api/rides.json`)
-
-    let ridesArray = await response.json()
-
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
 
@@ -131,10 +123,6 @@ window.addEventListener('DOMContentLoaded', function() {
   let nooberXLRides = document.querySelector('#noober-xl-filter')
     nooberXLRides.addEventListener('click', async function(event){
 
-    let response = await fetch(`https://kiei451.com/api/rides.json`)
-
-    let ridesArray = await response.json()
-
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
 
@@ -154,10 +142,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
   let nooberXRides = document.querySelector('#noober-x-filter')
     nooberXRides.addEventListener('click', async function(event){
-
-    let response = await fetch(`https://kiei451.com/api/rides.json`)
-
-    let ridesArray = await response.json()
 
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
