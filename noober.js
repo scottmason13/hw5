@@ -86,15 +86,15 @@ window.addEventListener('DOMContentLoaded', async function() {
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
 
-        levelOfService(unfilteredRides)
+      levelOfService(unfilteredRides)
 
-        let nooberPurpleArray = []
+      let newArray = []
 
       if (levelOfService(unfilteredRides) == 'Noober Purple'){
-          nooberPurpleArray.push(unfilteredRides)
+          newArray.push(unfilteredRides)
       } else {}
       
-      renderRides(nooberPurpleArray)
+      renderRides(newArray)
 
     }
 
@@ -106,15 +106,15 @@ window.addEventListener('DOMContentLoaded', async function() {
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
 
-        levelOfService(unfilteredRides)
+      levelOfService(unfilteredRides)
 
-        let nooberPoolArray = []
+      let newArray = []
 
       if (levelOfService(unfilteredRides) == 'Noober Pool'){
-          nooberPoolArray.push(unfilteredRides)
+        newArray.push(unfilteredRides)
       } else {}
       
-      renderRides(nooberPoolArray)
+      renderRides(newArray)
 
     }
 
@@ -126,15 +126,15 @@ window.addEventListener('DOMContentLoaded', async function() {
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
 
-        levelOfService(unfilteredRides)
+      levelOfService(unfilteredRides)
 
-        let nooberXLArray = []
+      let newArray = []
 
       if (levelOfService(unfilteredRides) == 'Noober XL'){
-          nooberXLArray.push(unfilteredRides)
+        newArray.push(unfilteredRides)
       } else {}
       
-      renderRides(nooberXLArray)
+      renderRides(newArray)
 
     }
 
@@ -146,15 +146,15 @@ window.addEventListener('DOMContentLoaded', async function() {
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
 
-        levelOfService(unfilteredRides)
+      levelOfService(unfilteredRides)
 
-        let nooberXArray = []
+      let newArray = []
 
       if (levelOfService(unfilteredRides) == 'Noober X'){
-          nooberXArray.push(unfilteredRides)
+        newArray = [].push(unfilteredRides)
       } else {}
       
-      renderRides(nooberXArray)
+      renderRides(newArray = [])
 
     }
 
