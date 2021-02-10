@@ -74,14 +74,18 @@ window.addEventListener('DOMContentLoaded', async function() {
   let ridesArray = await response.json()
 
   let allRides = document.querySelector('#all-filter')
-    allRides.addEventListener('click', async function(event){
+  allRides.addEventListener('click', async function(event){
+
+    document.querySelector('.rides').innerHTML = ``
 
     renderRides(ridesArray)
 
   })
 
   let nooberPurpleRides = document.querySelector('#noober-purple-filter')
-    nooberPurpleRides.addEventListener('click', async function(event){
+  nooberPurpleRides.addEventListener('click', async function(event){
+    
+    document.querySelector('.rides').innerHTML = ``
 
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
@@ -101,7 +105,9 @@ window.addEventListener('DOMContentLoaded', async function() {
   })
 
   let nooberPoolRides = document.querySelector('#noober-pool-filter')
-    nooberPoolRides.addEventListener('click', async function(event){
+  nooberPoolRides.addEventListener('click', async function(event){
+
+    document.querySelector('.rides').innerHTML = ``
 
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
@@ -121,7 +127,9 @@ window.addEventListener('DOMContentLoaded', async function() {
   })
 
   let nooberXLRides = document.querySelector('#noober-xl-filter')
-    nooberXLRides.addEventListener('click', async function(event){
+  nooberXLRides.addEventListener('click', async function(event){
+
+    document.querySelector('.rides').innerHTML = ``
 
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
@@ -141,7 +149,9 @@ window.addEventListener('DOMContentLoaded', async function() {
   })
 
   let nooberXRides = document.querySelector('#noober-x-filter')
-    nooberXRides.addEventListener('click', async function(event){
+  nooberXRides.addEventListener('click', async function(event){
+
+    document.querySelector('.rides').innerHTML = ``
 
     for (let i = 0; i < ridesArray.length; i++) {
       let unfilteredRides = ridesArray[i]
@@ -151,10 +161,10 @@ window.addEventListener('DOMContentLoaded', async function() {
       let newArray = []
 
       if (levelOfService(unfilteredRides) == 'Noober X'){
-        newArray = [].push(unfilteredRides)
+        newArray.push(unfilteredRides)
       } else {}
       
-      renderRides(newArray = [])
+      renderRides(newArray)
 
     }
 
