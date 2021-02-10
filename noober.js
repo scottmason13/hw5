@@ -69,9 +69,13 @@ function renderRides(ridesArray) {
 
 window.addEventListener('DOMContentLoaded', async function() {
 
+  // create full rides array
+
   let response = await fetch(`https://kiei451.com/api/rides.json`)
 
   let ridesArray = await response.json()
+
+  // generate display based on button clicked
 
   let allRides = document.querySelector('#all-filter')
   allRides.addEventListener('click', async function(event){
