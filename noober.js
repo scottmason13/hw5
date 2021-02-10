@@ -75,6 +75,32 @@ window.addEventListener('DOMContentLoaded', async function() {
 
   let ridesArray = await response.json()
 
+  let nooberPoolArray = []
+  let nooberXArray = []
+  let nooberPurpleArray = []
+  let nooberXLArray = []
+
+  // generate level of service specific arrays
+
+  for (let i = 0; i < ridesArray.length; i++) {
+    let unfilteredRides = ridesArray[i]
+
+    levelOfService(unfilteredRides)
+  
+    if (levelOfService(unfilteredRides) == 'Noober Pool'){
+      nooberPoolArray.push(unfilteredRides)
+    } else if
+      (levelOfService(unfilteredRides) == 'Noober X'){
+      nooberXArray.push(unfilteredRides)
+    } else if
+      (levelOfService(unfilteredRides) == 'Noober XL'){
+      nooberXLArray.push(unfilteredRides)
+    } else {
+      nooberPurpleArray.push(unfilteredRides)
+    }
+
+  }
+
   // generate display based on button clicked
 
   let allRides = document.querySelector('#all-filter')
@@ -90,21 +116,8 @@ window.addEventListener('DOMContentLoaded', async function() {
   nooberPurpleRides.addEventListener('click', async function(event){
     
     document.querySelector('.rides').innerHTML = ``
-
-    for (let i = 0; i < ridesArray.length; i++) {
-      let unfilteredRides = ridesArray[i]
-
-      levelOfService(unfilteredRides)
-
-      let newArray = []
-
-      if (levelOfService(unfilteredRides) == 'Noober Purple'){
-          newArray.push(unfilteredRides)
-      } else {}
       
-      renderRides(newArray)
-
-    }
+    renderRides(nooberPurpleArray)
 
   })
 
@@ -113,20 +126,7 @@ window.addEventListener('DOMContentLoaded', async function() {
 
     document.querySelector('.rides').innerHTML = ``
 
-    for (let i = 0; i < ridesArray.length; i++) {
-      let unfilteredRides = ridesArray[i]
-
-      levelOfService(unfilteredRides)
-
-      let newArray = []
-
-      if (levelOfService(unfilteredRides) == 'Noober Pool'){
-        newArray.push(unfilteredRides)
-      } else {}
-      
-      renderRides(newArray)
-
-    }
+    renderRides(nooberPoolArray)
 
   })
 
@@ -135,20 +135,7 @@ window.addEventListener('DOMContentLoaded', async function() {
 
     document.querySelector('.rides').innerHTML = ``
 
-    for (let i = 0; i < ridesArray.length; i++) {
-      let unfilteredRides = ridesArray[i]
-
-      levelOfService(unfilteredRides)
-
-      let newArray = []
-
-      if (levelOfService(unfilteredRides) == 'Noober XL'){
-        newArray.push(unfilteredRides)
-      } else {}
-      
-      renderRides(newArray)
-
-    }
+    renderRides(nooberXLArray)
 
   })
 
@@ -157,20 +144,7 @@ window.addEventListener('DOMContentLoaded', async function() {
 
     document.querySelector('.rides').innerHTML = ``
 
-    for (let i = 0; i < ridesArray.length; i++) {
-      let unfilteredRides = ridesArray[i]
-
-      levelOfService(unfilteredRides)
-
-      let newArray = []
-
-      if (levelOfService(unfilteredRides) == 'Noober X'){
-        newArray.push(unfilteredRides)
-      } else {}
-      
-      renderRides(newArray)
-
-    }
+    renderRides(nooberXArray)
 
   })
 
