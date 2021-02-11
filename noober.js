@@ -110,6 +110,8 @@ window.addEventListener('DOMContentLoaded', async function() {
 
     renderRides(ridesArray)
 
+    console.log(`All Rides Clicked`)
+
   })
 
   let nooberPurpleRides = document.querySelector('#noober-purple-filter')
@@ -118,6 +120,8 @@ window.addEventListener('DOMContentLoaded', async function() {
     document.querySelector('.rides').innerHTML = ``
       
     renderRides(nooberPurpleArray)
+
+    console.log(`Noober Purple Clicked`)
 
   })
 
@@ -128,6 +132,8 @@ window.addEventListener('DOMContentLoaded', async function() {
 
     renderRides(nooberPoolArray)
 
+    console.log(`Noober Pool Clicked`)
+
   })
 
   let nooberXLRides = document.querySelector('#noober-xl-filter')
@@ -137,6 +143,8 @@ window.addEventListener('DOMContentLoaded', async function() {
 
     renderRides(nooberXLArray)
 
+    console.log(`Noober XL Clicked`)
+
   })
 
   let nooberXRides = document.querySelector('#noober-x-filter')
@@ -145,6 +153,8 @@ window.addEventListener('DOMContentLoaded', async function() {
     document.querySelector('.rides').innerHTML = ``
 
     renderRides(nooberXArray)
+
+    console.log(`Noober X Clicked`)
 
   })
 
