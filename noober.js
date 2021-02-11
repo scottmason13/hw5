@@ -69,42 +69,14 @@ function renderRides(ridesArray) {
 
 window.addEventListener('DOMContentLoaded', async function() {
 
-  // create full rides array
-
-  let response = await fetch(`https://kiei451.com/api/rides.json`)
-
-  let ridesArray = await response.json()
-
-  let nooberPoolArray = []
-  let nooberXArray = []
-  let nooberPurpleArray = []
-  let nooberXLArray = []
-
-  // generate level of service specific arrays
-
-  for (let i = 0; i < ridesArray.length; i++) {
-    let unfilteredRides = ridesArray[i]
-
-    levelOfService(unfilteredRides)
-  
-    if (levelOfService(unfilteredRides) == 'Noober Pool'){
-      nooberPoolArray.push(unfilteredRides)
-    } else if
-      (levelOfService(unfilteredRides) == 'Noober X'){
-      nooberXArray.push(unfilteredRides)
-    } else if
-      (levelOfService(unfilteredRides) == 'Noober XL'){
-      nooberXLArray.push(unfilteredRides)
-    } else {
-      nooberPurpleArray.push(unfilteredRides)
-    }
-
-  }
-
   // generate display based on button clicked
 
   let allRides = document.querySelector('#all-filter')
   allRides.addEventListener('click', async function(event){
+
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+
+    let ridesArray = await response.json() 
 
     document.querySelector('.rides').innerHTML = ``
 
@@ -117,8 +89,25 @@ window.addEventListener('DOMContentLoaded', async function() {
   let nooberPurpleRides = document.querySelector('#noober-purple-filter')
   nooberPurpleRides.addEventListener('click', async function(event){
     
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+
+    let ridesArray = await response.json()
+  
+    let nooberPurpleArray = [] 
+
     document.querySelector('.rides').innerHTML = ``
       
+    for (let i = 0; i < ridesArray.length; i++) {
+      let unfilteredRides = ridesArray[i]
+  
+      levelOfService(unfilteredRides)
+
+      if (levelOfService(unfilteredRides) == 'Noober Purple'){
+        nooberPurpleArray.push(unfilteredRides)
+      }
+      
+    }
+
     renderRides(nooberPurpleArray)
 
     console.log(`Noober Purple Clicked`)
@@ -128,7 +117,24 @@ window.addEventListener('DOMContentLoaded', async function() {
   let nooberPoolRides = document.querySelector('#noober-pool-filter')
   nooberPoolRides.addEventListener('click', async function(event){
 
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+
+    let ridesArray = await response.json()
+  
+    let nooberPoolArray = []  
+
     document.querySelector('.rides').innerHTML = ``
+
+    for (let i = 0; i < ridesArray.length; i++) {
+      let unfilteredRides = ridesArray[i]
+  
+      levelOfService(unfilteredRides)
+
+      if (levelOfService(unfilteredRides) == 'Noober Pool'){
+        nooberPoolArray.push(unfilteredRides)
+      }
+
+    }
 
     renderRides(nooberPoolArray)
 
@@ -139,7 +145,24 @@ window.addEventListener('DOMContentLoaded', async function() {
   let nooberXLRides = document.querySelector('#noober-xl-filter')
   nooberXLRides.addEventListener('click', async function(event){
 
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+
+    let ridesArray = await response.json()
+  
+    let nooberXLArray = []  
+
     document.querySelector('.rides').innerHTML = ``
+
+    for (let i = 0; i < ridesArray.length; i++) {
+      let unfilteredRides = ridesArray[i]
+  
+      levelOfService(unfilteredRides)
+
+      if (levelOfService(unfilteredRides) == 'Noober XL'){
+        nooberXLArray.push(unfilteredRides)
+      } 
+
+    }
 
     renderRides(nooberXLArray)
 
@@ -150,7 +173,24 @@ window.addEventListener('DOMContentLoaded', async function() {
   let nooberXRides = document.querySelector('#noober-x-filter')
   nooberXRides.addEventListener('click', async function(event){
 
+    let response = await fetch(`https://kiei451.com/api/rides.json`)
+
+    let ridesArray = await response.json()
+  
+    let nooberXArray = []  
+
     document.querySelector('.rides').innerHTML = ``
+
+    for (let i = 0; i < ridesArray.length; i++) {
+      let unfilteredRides = ridesArray[i]
+  
+      levelOfService(unfilteredRides)
+
+      if (levelOfService(unfilteredRides) == 'Noober X'){
+        nooberXArray.push(unfilteredRides)
+      }
+
+    }
 
     renderRides(nooberXArray)
 
